@@ -4,13 +4,19 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
+	modules: {
+		topNav: {
+			namespaced: true,
 
-  },
-  mutations: {
+			state: {
+				title: null,
+			},
 
-  },
-  actions: {
-
-  }
+			mutations: {
+				setTitle(state, value) {
+					state.title = value;
+				},
+			}
+		},
+	}
 })
