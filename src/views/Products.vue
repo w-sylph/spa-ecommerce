@@ -1,38 +1,27 @@
 <template>
 	<v-container class="px-5" fluid>
-        <v-row>
-			<v-col v-for="(item, index) in items.data" sm="6" md="4" lg="3" :key="index">
-				<product-card
-				:item="item"
-				:index="index"
-				></product-card>
-			</v-col>
-		</v-row>
+        <product-list
+		:items="categories"
+        ></product-list>
 	</v-container>
 </template>
 
 <script>
-import ProductList from '../json/exam-data.json';
-
-import ProductCard from '../components/ProductCard.vue';
+import ProductList from '../components/products/ProductList.vue';
 
 export default {
 	mounted() {
 		this.setTitle('Products');
 	},
 
-	methods: {
-
-	},
-
-	data() {
-		return {
-			items: ProductList,
-		}
+	computed: {
+		categories() {
+			return this.$store.state.resources.categories;
+		},
 	},
 
 	components: {
-		'product-card': ProductCard,
+		'product-list': ProductList,
 	},
 };
 </script>

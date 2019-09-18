@@ -8,11 +8,14 @@
 			<v-toolbar-title>{{ page_title }}</v-toolbar-title>
 
 			<div class="flex-grow-1"></div>
+			
+				<v-badge :value="array_count(cart_items) > 0" class="mr-5" color="blue lighten-1">
+					<template v-slot:badge>{{ array_count(cart_items) }}</template>
+					<v-btn @click="goTo('cart')" icon small>
+						<v-icon>mdi-cart</v-icon>
+					</v-btn>
+				</v-badge>
 
-			<v-badge class="mr-5" color="blue lighten-1">
-				<template v-slot:badge>0</template>
-				<v-icon>mdi-cart</v-icon>
-			</v-badge>
 
 		</v-app-bar>
 
@@ -24,6 +27,7 @@
 
 <script>
 import NavigationDrawer from './NavigationDrawer.vue';
+import ArrayMixin from '../mixins/array.js';
 
 export default {
 	methods: {
@@ -42,10 +46,16 @@ export default {
 		page_title() {
 			return this.$store.state.topNav.title;
 		},
+
+		cart_items() {
+			return this.$store.state.cart.cart_items;
+		},
 	},
 
 	components: {
 		'navigation-drawer': NavigationDrawer,
 	},
+
+	mixins: [ ArrayMixin ],
 }
 </script>

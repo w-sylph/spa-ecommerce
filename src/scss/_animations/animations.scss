@@ -1,0 +1,9 @@
+.text--blink {
+	animation: blinkingText 2s infinite;
+}
+
+@keyframes blinkingText{
+    0% { color: #F44336; }
+    50% { color: #fff; }
+    100% { color: #F44336; }
+}
