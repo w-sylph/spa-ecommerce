@@ -29,7 +29,7 @@ npm run lint
 ```
 npm run build
 ```
-https://cli.vuejs.org/guide/deployment.html#general-guidelines
+See [Deployment Guide](https://cli.vuejs.org/guide/deployment.html#general-guidelines).
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
