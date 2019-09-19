@@ -27,8 +27,15 @@ export default new Vuex.Store({
 			},
 
 			mutations: {
-				set(state, value) {
+				add(state, value) {
 					state.cart_items = value;
+				},
+
+				update(state, value) {
+					let index = state.cart_items.findIndex((cart_item) => {
+						return cart_item.id == value.id; 
+					});
+					state.cart_items[index].quantity = value.quantity;
 				},
 			}
 		},

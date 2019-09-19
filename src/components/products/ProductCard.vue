@@ -29,11 +29,12 @@ export default {
 			let item = cart_items.filter(obj => { return obj.id === this.item.id; })[0];
 			if (!item) {
 				if (this.price > 0) {
+					this.item.quantity = 1;
 					cart_items.push(this.item);
-					this.$store.commit('cart/set', cart_items);
+					this.$store.commit('cart/add', cart_items);
 					this.alert.success(this.item.title + ' has successfully been added to your cart');
 				} else {
-					this.alert.error(this.item.title + ' is for inquiry only');
+					this.alert.error(this.item.title + ' sorry product is currently not available');
 				}
 			} else {
 				this.alert.warning(this.item.title + ' is already in your cart');

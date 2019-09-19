@@ -39,6 +39,10 @@
 import ProductMixin from '../products/mixin.js';
 
 export default {
+	mounted() {
+		this.quantity = this.item.quantity;
+	},
+
 	methods: {
 		increase() {
 			this.quantity++;
@@ -55,6 +59,11 @@ export default {
 			this.alert.success(this.item.title + ' has successfully been removed from your cart');
 			this.$store.commit('cart/set', cart_items);
 		},
+
+		update() {
+			this.item.quantity = this.quantity;
+			this.$store.commit('cart/update', this.item);
+		},
 	},
 
 	computed: {
@@ -67,6 +76,8 @@ export default {
 		quantity(value) {
 			if (value < 1) {
 				this.remove();
+			} else {
+				this.update(value);
 			}
 		},
 	},

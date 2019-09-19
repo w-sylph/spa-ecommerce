@@ -29,8 +29,9 @@
 					></cart-item>
 				</v-col>
 
-				<v-col cols="12" class="text-center">
-					<p v-if="array_count(items) < 1">No item found</p>
+				<v-col v-if="array_count(items) < 1" cols="12" class="text-center">
+					<p>No item found</p>
+					<v-btn @click="goTo('products')" outlined color="primary">Go to Products</v-btn>
 				</v-col>
 			</v-row>
 		</v-col>
