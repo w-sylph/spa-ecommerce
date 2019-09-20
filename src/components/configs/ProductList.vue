@@ -85,9 +85,9 @@ export default {
 			this.selected = {};
 			this.title = null;
 			this.order = null;
-			this.price = null;
+			this.price = 1;
 			this.on_sale = null;
-			this.sale_price = null;
+			this.sale_price = 0;
 			this.open();
 		},
 
@@ -138,7 +138,7 @@ export default {
 			order: null,
 			price: null,
 			on_sale: false,
-			sale_price: null,
+			sale_price: 0,
 		}
 	},
 
