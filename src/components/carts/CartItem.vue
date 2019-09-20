@@ -4,7 +4,7 @@
 			<p>{{ item.title }}</p>
 
 			<custom-image
-			:index="index"
+			:index="item.index"
 			></custom-image>
 
 			<p>{{ formatted_price }}</p>
@@ -57,7 +57,7 @@ export default {
 		remove() {
 			let cart_items = this.cart_items.filter(obj => { return obj.id !== this.item.id });
 			this.alert.success(this.item.title + ' has successfully been removed from your cart');
-			this.$store.commit('cart/set', cart_items);
+			this.$store.commit('cart/add', cart_items);
 		},
 
 		update() {

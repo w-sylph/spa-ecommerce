@@ -1,12 +1,16 @@
 <template>
 	<v-container class="px-5" fluid>
-        <product-list
+        <!-- <product-list
 		:items="categories"
-        ></product-list>
+        ></product-list> -->
+        <category-list
+		:items="categories"
+        ></category-list>
 	</v-container>
 </template>
 
 <script>
+import CategoryList from '../components/products/CategoryList.vue';
 import ProductList from '../components/products/ProductList.vue';
 
 export default {
@@ -21,6 +25,7 @@ export default {
 	},
 
 	components: {
+		'category-list': CategoryList,
 		'product-list': ProductList,
 	},
 };

@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<v-app-bar color="deep-purple accent-4" dark>
+	<div style="height: 64px;">
+		<v-app-bar fixed color="deep-purple accent-4" dark>
 			<v-app-bar-nav-icon
 			@click="toggle"
 			></v-app-bar-nav-icon>

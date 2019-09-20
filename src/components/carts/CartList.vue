@@ -25,7 +25,6 @@
 				<v-col v-for="(item, index) in items" sm="12" :key="item.id">
 					<cart-item
 					:item="item"
-					:index="index"
 					></cart-item>
 				</v-col>
 

@@ -1,21 +1,26 @@
 <template>
 	<v-row>
-		<v-col v-for="(item, i) in sortedItems" sm="6" md="4" lg="3" :key="'item-' + i">
-			<product-card
-			:item="item"
-			:index="i"
-			:parent-id="parentId"
-			></product-card>
+		<v-col cols="12" v-for="(brand, i) in sortedItems" :key="'brand-' + i">
+			<v-card>
+				<v-container fluid>
+					<v-card-title class="justify-center">{{ brand.title }}</v-card-title>
+				    <product-list
+					:items="brand.products"
+					:parent-id="parentId"
+				    ></product-list>
+				</v-container>
+			</v-card>
 		</v-col>
-		
+
 		<v-col v-if="array_count(items) < 1" cols="12" class="text-center">
 			<p>No item found</p>
 		</v-col>
+
 	</v-row>
 </template>
 
 <script>
-import ProductCard from './ProductCard.vue';
+import ProductList from './ProductList.vue';
 import ArrayMixin from '../../mixins/array.js';
 
 export default {
@@ -42,16 +47,11 @@ export default {
 		parentId: {},
 	},
 
-	data() {
-		return {
-			tab: 'tab-0',
-		}
-	},
-
 	components: {
-		'product-card': ProductCard,
+		'product-list': ProductList,
 	},
 
 	mixins: [ ArrayMixin ],
 };
+</script>
 </script>

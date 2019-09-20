@@ -1,5 +1,5 @@
 <template>
-	<v-navigation-drawer v-model="visibility" absolute temporary>
+	<v-navigation-drawer v-model="visibility" fixed temporary>
 		<v-list-item>
 			<v-list-item-avatar>
 				<v-img :src="require('../assets/avatar.jpg')"></v-img>

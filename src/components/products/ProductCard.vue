@@ -29,7 +29,9 @@ export default {
 			let item = cart_items.filter(obj => { return obj.id === this.item.id; })[0];
 			if (!item) {
 				if (this.price > 0) {
+					this.item.category_id = this.parentId;
 					this.item.quantity = 1;
+					this.item.index = this.index;
 					cart_items.push(this.item);
 					this.$store.commit('cart/add', cart_items);
 					this.alert.success(this.item.title + ' has successfully been added to your cart');
@@ -40,6 +42,10 @@ export default {
 				this.alert.warning(this.item.title + ' is already in your cart');
 			}
 		},
+	},
+
+	props: {
+		parentId: {},
 	},
 
 	mixins: [ ProductMixin ],
