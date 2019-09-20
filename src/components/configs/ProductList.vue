@@ -41,7 +41,7 @@
 					<v-card-text>
 						<v-text-field v-model="title" label="Title" :rules="[rules.required]"></v-text-field>
 						<v-text-field v-model="order" label="Order" :rules="[rules.required, rules.number]"></v-text-field>
-						<v-text-field v-model="price" label="Price" :rules="[rules.required, rules.number]"></v-text-field>
+						<v-text-field v-model="price" label="Price" :rules="[rules.required, rules.price]"></v-text-field>
 						<v-checkbox v-model="on_sale" label="On Sale"></v-checkbox>
 						<v-text-field v-model="sale_price" label="Sale Price" :rules="[rules.required, rules.number, saleRule]"></v-text-field>
 					</v-card-text>

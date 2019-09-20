@@ -4,11 +4,11 @@ export default {
 	computed: {
 		sortedItems: function() {
 			function compare(a, b) {
-				if (a.order < b.order) {
+				if (parseFloat(a.order) < parseFloat(b.order)) {
 					return -1;
 				}
 
-				if (a.order > b.order) {
+				if (parseFloat(a.order) > parseFloat(b.order)) {
 					return 1;
 				}
 

@@ -4,6 +4,7 @@ export default {
 			return {
 				required: value => !!value || 'Required.',
 				number: value => value >= 0 || 'Value must be greater than 0.',
+				price: value => value >= 1 || 'Value must be greater than 1.',
 			}
 		},
 	},
