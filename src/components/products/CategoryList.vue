@@ -13,39 +13,17 @@
 				</v-tab-item>
 
 			</v-tabs>
-			
+
 			<p v-else>No item found</p>
 		</v-col>
 	</v-row>
 </template>
 
 <script>
+import ListMixin from './list.js';
 import BrandList from './BrandList.vue';
-import ArrayMixin from '../../mixins/array.js';
 
 export default {
-	computed: {
-		sortedItems: function() {
-			function compare(a, b) {
-				if (a.order < b.order) {
-					return -1;
-				}
-
-				if (a.order > b.order) {
-					return 1;
-				}
-
-				return 0;
-			}
-
-			return this.items.sort(compare);
-		}
-	},
-
-	props: {
-		items: {},
-	},
-
 	data() {
 		return {
 			tab: 'tab-0',
@@ -56,6 +34,6 @@ export default {
 		'brand-list': BrandList,
 	},
 
-	mixins: [ ArrayMixin ],
+	mixins: [ ListMixin ],
 };
 </script>

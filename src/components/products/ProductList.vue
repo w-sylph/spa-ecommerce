@@ -7,7 +7,7 @@
 			:parent-id="parentId"
 			></product-card>
 		</v-col>
-		
+
 		<v-col v-if="array_count(items) < 1" cols="12" class="text-center">
 			<p>No item found</p>
 		</v-col>
@@ -15,43 +15,18 @@
 </template>
 
 <script>
+import ListMixin from './list.js';
 import ProductCard from './ProductCard.vue';
-import ArrayMixin from '../../mixins/array.js';
 
 export default {
-	computed: {
-		sortedItems: function() {
-			function compare(a, b) {
-				if (a.order < b.order) {
-					return -1;
-				}
-
-				if (a.order > b.order) {
-					return 1;
-				}
-
-				return 0;
-			}
-
-			return this.items.sort(compare);
-		}
-	},
-
 	props: {
-		items: {},
 		parentId: {},
-	},
-
-	data() {
-		return {
-			tab: 'tab-0',
-		}
 	},
 
 	components: {
 		'product-card': ProductCard,
 	},
 
-	mixins: [ ArrayMixin ],
+	mixins: [ ListMixin ],
 };
 </script>
