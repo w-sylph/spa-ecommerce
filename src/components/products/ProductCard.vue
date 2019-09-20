@@ -4,7 +4,7 @@
 		<custom-image
 		:index="index"
 		></custom-image>
-        <div class="fill-height d-flex flex-column">
+        <div class="d-flex flex-column">
         	<div class="flex-grow-1 py-2">
         		<v-card-text v-if="item.on_sale" class="py-0">
         			<span class="red--text">SALE! </span>
@@ -14,7 +14,7 @@
         	</div>
 			<v-card-actions class="pt-0 flex-grow-1 justify-center align-end">
 				<v-btn @click="add" color="primary" small><v-icon left>mdi-cart-arrow-down</v-icon>Add to Cart</v-btn>
-			</v-card-actions>	
+			</v-card-actions>
         </div>
 	</v-card>
 </template>
