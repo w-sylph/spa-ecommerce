@@ -3,27 +3,3 @@
 	color: #ccc;
 	text-decoration: line-through;
 }
-
-.text--hoverable {
-	&:hover {
-
-		.text__item--hoverable {
-			visibility: visible;
-			opacity: 1;
-			transition: opacity 0.3s ease-in-out;
-		}
-
-	}
-}
-
-.text__item--hoverable {
-	visibility: hidden;
-	opacity: 0;
-}
-
-@media only screen and (max-width: 960px) {
-	.text__item--hoverable {
-		visibility: visible;
-		opacity: 1;
-	}
-}

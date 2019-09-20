@@ -6,7 +6,7 @@
 		></custom-image>
         <div class="d-flex flex-column">
         	<div class="flex-grow-1 py-2">
-        		<v-card-text v-if="item.on_sale" class="py-0">
+        		<v-card-text :class="!item.on_sale ? 'hidden' : ''" class="py-0">
         			<span class="red--text">SALE! </span>
         			<span class="text--strike">{{ toMoney(item.price) }}</span>
         		</v-card-text>
